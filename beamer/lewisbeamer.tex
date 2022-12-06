@@ -1,0 +1,50 @@
+%!TEX program = xelatex
+% change the aspect ratio to 169 for 16:9 aspect ratio
+% otherwise remove option completely for 3:2 ratio.
+\documentclass[aspectratio=169,serif]{beamer}
+% 导言文件
+\input{lewisbeamer.inc}
+
+\author{2053642 Li Boyu}
+\title{中文标题}
+
+\date{\today} 
+\subject{Computer Science} 
+
+\begin{document}
+
+% 不要动标签页定义，否则乱码
+\mytitlepage
+
+% 正文由若干节组成，每节若干张幻灯片，称为frame
+% 插代码的幻灯片为了兼容beamer，需要定义成\begin{frame}[fragile]{title}{subtitle}
+\section{正文第一节}
+
+\begin{frame}{主标题}{副标题}
+% 幻灯片一般使用两列竖式排版
+\begin{columns}
+% column的定义
+\begin{column}{0.48\textwidth}
+\textbf{第一栏}
+\includegraphics[width=0.98\linewidth]{./fig/tongjilogo.pdf}
+\end{column}
+\begin{column}{0.48\textwidth}
+\textbf{第二栏}
+\begin{table}[H]
+\centering
+\caption{表标题}
+\begin{tabular}{cc}
+\hline
+表头1 & 表头2 \\
+\hline
+内容1 & 内容2 \\
+内容3 & 内容4 \\
+\hline
+\end{tabular}
+\end{table}
+\end{column}
+\end{columns}
+\end{frame}
+
+\end{document}
+

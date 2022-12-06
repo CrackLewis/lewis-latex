@@ -1,0 +1,111 @@
+%!TEX program = xelatex
+%!encoding = utf-8
+% 完整编译: xelatex -> bibtex -> xelatex -> xelatex
+\documentclass[lang=en,9pt,a4paper,cite=authoryear]{lewisthesis}
+
+% ======================================================================
+%
+%
+%   LiBoyu的蜜汁作业模板
+%
+%
+% ======================================================================
+% TODO：
+%  - 修改文档标题
+%  - 删除正文内容
+%  - 编写文档
+
+
+\title{Thesis Template}
+\author{2053642 Li Boyu}
+\institute{Computer Science, CEIE, Tongji Univ.}
+\version{1.0}
+\date{\today}
+
+% fontspec：字体修改支持，默认为宋体/TimesNewRoman
+\usepackage{fontspec}
+\newcommand{\ccr}[1]{\makecell{{\color{#1}\rule{1cm}{1cm}}}}
+% lil：lstinline缩写
+\newcommand{\lil}[1]{\lstinline{#1}}
+% spc：快捷插图，语法：\spc{\path\to\pic.png}{caption}，默认0.7倍行宽度
+\newcommand{\spc}[2]{\begin{figure}[H]\centering\includegraphics[width=0.7\linewidth]{#1}\caption{#2}\end{figure}}
+
+\allowdisplaybreaks
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+You can fill the content of the abstract or simply delete it as you please.
+\keywords{homework, thesis, template, \LaTeX{}}
+\end{abstract}
+
+\tableofcontents
+
+\newpage
+
+\section{Section A}
+
+\subsection{Subsection A.1}
+
+\subsubsection{Subsubsection A.1.1}
+
+\paragraph{Paragraph A.1.1.a}
+
+This is the content of Paragraph A.1.1.a.
+
+\subparagraph{Subparagraph A.1.1.a.a}
+
+This is the content of Subparagraph A.1.1.a.a.
+
+\section{Richer context}
+
+The following \TeX{} code allows you to insert a figure to the article.
+
+\begin{lstlisting}[language=TeX]
+% Adding a figure to the article:
+% (The two methods are equivalent)
+\begin{figure}[H] ... \end{figure}
+\spc{path}{caption}
+\end{lstlisting}
+
+\begin{lstlisting}[style=lstypy,caption={\lil{Python} Source Code}]
+def f(x):
+	strlit = "literal"
+  ans = 1
+  # comments
+  for i in range(1,x+1):
+    ans = ans * i
+  return ans
+\end{lstlisting}
+
+\begin{multicols}{2}
+\begin{lstlisting}[style=lstycxx,caption={\lil{C/C++} Source Code}]
+#include<bits/stdc++.h>
+
+int main()
+{
+	std::cout<<"Hello World!"<<std::endl;
+  // comments
+  /* comments */
+  0;
+  return 0;
+}
+\end{lstlisting}
+\end{multicols}
+
+\begin{table}[H]
+\centering
+\caption{Table Header}
+\begin{tabular}{cc}
+\hline
+Field1 & Field2 \\
+\hline
+Record11 & Record12 \\
+Record21 & Record22 \\
+\hline
+\end{tabular}
+\end{table}
+
+\end{document}
